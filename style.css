@@ -1,0 +1,101 @@
+﻿html, body {
+    height: 100%;
+    margin: 0;
+    font-family: "Segoe UI", SegoeUI, sans-serif;
+    font-size: 14px;
+}
+
+/* Gesamtlayout */
+.layout {
+    display: flex;
+    height: 100vh;
+}
+
+/* Linke Spalte */
+.sidebar {
+    width: 25%;
+    min-width: 200px;
+    max-width: 305px;
+    flex-shrink: 0;
+    box-sizing: border-box;
+    padding: 15px;
+    border-right: 1px solid #ccc;
+    overflow-y: auto;
+}
+
+/* Navigation */
+.nav {
+    margin-bottom: 20px;
+}
+
+.nav-buttons {
+    display: flex;
+    gap: 6px;
+}
+
+    .nav-buttons button {
+        flex: 1;
+        padding: 6px 0;
+        font-size: 14px;
+        cursor: pointer;
+    }
+
+/* Suchfeld */
+.nav input[type="search"] {
+    display: block;
+    width: 100%;
+    margin-top: 10px;
+    box-sizing: border-box;
+}
+
+/* Haus-Symbol */
+.icon-home::before {
+    content: "⌂";
+    font-size: 16px;
+}
+
+/* Inhaltsverzeichnis */
+.toc ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+    .toc ul ul {
+        padding-left: 15px;
+    }
+
+.toc a {
+    text-decoration: none;
+    color: black;
+}
+
+    .toc a.active {
+        color: MediumTurquoise;
+    }
+
+/* Rechter Inhalt */
+#content {
+    flex: 1;
+    padding: 25px;
+    overflow-y: auto;
+}
+
+/* Überschriften-Hierarchie */
+h1 {
+    font-size: 20px;
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+h2 {
+    font-size: 16px;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 4px;
+    margin-top: 30px;
+}
+
+h3 {
+    font-size: 14px;
+    font-weight: 600;
+    margin-top: 20px;
+}

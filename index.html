@@ -1,0 +1,689 @@
+﻿<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="utf-8">
+    <title>Noten-Eule: Hilfe</title>
+    <link rel="stylesheet" href="style.css">
+    <script defer src="script.js"></script>
+</head>
+<body>
+
+    <div class="layout">
+
+        <aside class="sidebar">
+
+            <div class="nav">
+                <div class="nav-buttons">
+                    <button onclick="goHome()" title="Start">
+                        <span class="icon-home"></span>
+                    </button>
+                    <button onclick="goPrev()" title="Zurück">←</button>
+                    <button onclick="goNext()" title="Weiter">→</button>
+                </div>
+
+                <input type="search"
+                       id="searchBox"
+                       placeholder="Suche…"
+                       oninput="suche()" />
+            </div>
+
+            <nav class="toc">
+                <!-- TOC wird per JavaScript generiert -->
+            </nav>
+
+        </aside>
+
+        <main id="content">
+
+            <h1>Noten-Eule: Hilfe</h1>
+
+            <p>Die Noten-Eule ist das neue Programm zur Eingabe der Noten und Kreuze für die Trimesterinformationen und Zeugnisse am Heisenberg-Gymnasium.</p>
+
+            <section id="neu">
+                <h2>Informationen zur aktuellen Version</h2>
+
+                <p>Das vorliegende Programm bietet noch nicht alle geplanten Funktionen. Es wurde aber bereits erfolgreich zum Druck der Zweiten Trimesterinformation am Standort Bruchsal eingesetzt, und soll als nächstes zum Druck der Zeugnisse für die Unter- und Mittelstufe an allen Standorten dienen.</p>
+
+                <section id="entwicklungsstand">
+                    <h3>Entwicklungsstand</h3>
+                    <p>
+                        Derzeit ist nur die Unter- und Mittelstufe verfügbar. Das Drucken der Zeugnisse wird rechtzeitig bis zur Zeugnisausgabe implementiert. Die Eintragung aller dafür nötigen Informationen - einschließlich Versetzungsbemerkung, AGs, Lob & Preis - ist aber bereits möglich. Die Kursstufe und zusätzliche Funktionen wie die Pflege der Klassensätze folgen später. Eine Liste der geplanten Funktionen findet ihr im entsprechenden Hilfsabschnitt ganz unten.
+                    </p>
+                </section>
+
+                <section id="faecherauswahl">
+                    <h3>Fächerzuordnung überprüfen</h3>
+                    <p>
+                        Falls euer Fach nicht in der Liste der Fächer erscheint oder falsch benannt ist, oder falls zu eurem Fach nicht die richtige Klasse erscheint, dann stimmt etwas mit der Zuordnung nicht. Gebt in diesem Fall bitte zeitnah Bescheid, über die Rückmeldefunktion oder über Teams an <i>Robert Jungblut</i>.
+                    </p>
+                </section>
+
+                <section id="klassenlisten">
+                    <h3>Klassenlisten überprüfen</h3>
+                    <p>
+                        Die Daten für die Klassenlisten entstammen direkt der zentralen Verwaltungs-Datenbank <i>Atlantis</i>. Falls in eurer Klasse oder eurem Fach Schülerinnen und Schüler falsch benannt oder falsch zugeordnet sind, müssen sie dort korrigiert werden. Überprüft daher bitte zeitnah eure Klassenlisten, und meldet eurem Sekretariat, falls diesbezüglich etwas nicht stimmt. Dies gilt insbesondere für Klassenlehrkräfte und alle, die nicht im normalen Klassenverband unterrichten (Sport, Religion/Ethik, Spanisch...).
+                    </p>
+                </section>
+
+                <section id="rueckmeldung">
+                    <h3>Rückmeldung geben</h3>
+                    <p>
+                        Wenn ihr einen Fehler findet, wenn ein Problem auftritt, wenn ihr einen Verbesserungsvorschlag habt oder wenn ihr an irgendeiner Stelle mit der Bedienung nicht zufrieden seid, gebt bitte über die Schaltfläche <i>Rückmeldung</i> Bescheid. Die aktuelle Ansicht bzw. Klassenliste wird dabei automatisch protokolliert, so dass sie nicht explizit erwähnt werden muss. Jede Rückmeldungen hilft, das Programm besser an die Bedürfnisse des Kollegiums anzupassen und das Programm zu verbessern.
+                    </p>
+                </section>
+
+                <section id="ansprechpersonen">
+                    <h3>Ansprechpersonen</h3>
+                    <p>
+                        Für eine schnelle Hilfe vor Ort stehen bei Problemen und Fragen die Ansprechpersonen der jeweiligen Standorte zur Verfügung:<br />
+                        <span id="ansprechpersonenliste">[wird geladen...]</span>
+                    </p>
+                </section>
+            </section>
+
+            <section id="auswahl">
+                <h2>Auswahl der Notenliste</h2>
+
+                <p>
+                    Damit Noten eingegeben werden können, muss zunächst die passende Notenliste geöffnet werden.
+                </p>
+
+                <section id="arbeitsablauf">
+                    <h3>Arbeitsablauf</h3>
+                    <p>
+                        Die Schaltelemente zur Auswahl der Notenliste befinden sich immer oben im Programm. Zunächst muss das Fach ausgewählt werden. Dadurch wird die Klassenauswahl in Abhängigkeit vom gewählten Fach gefüllt mit den einzelnen Klassen, Klassenstufen (bspw. bei Religion/Ethik) oder Sportgruppen. Sobald die Klasse ausgewählt wird, öffnet sich automatisch die nächstgelegene Beurteilung (Trimesterinformation oder Zeugnis) zur gewählten Kombination aus Fach und Klasse. Das aktuelle Schuljahr und die entsprechende Beurteilung werden automatisch gesetzt, können jedoch manuell geändert werden. Der Standort hingegen kann nicht geändert werden.
+                    </p>
+                </section>
+
+                <section id="listenwechsel">
+                    <h3>Listenwechsel bei geöffneter Liste</h3>
+                    <p>
+                        Wenn eine Liste geöffnet ist, kann über die Wahl einer anderen Klasse direkt in die Liste dieser Klasse desselben Fachs gewechselt werden. Ebenso kann über die Wahl eines anderen Fachs direkt in die Liste dieses Fachs derselben Klasse gewechselt werden. Dies funktioniert auch dann, wenn die Klasse in einem der Fächer nicht in voller Klassenstärke unterrichtet wird. Ebenso ist der Wechsel in ein klassenübergreifendes Fach möglich, solange die Zuordnung eindeutig ist, beispielsweise beim Wechsel von Mathematik 5c zu Ethik 5. Gibt es hingegen mehrere Möglichkeiten für die Klassenauswahl, muss diese manuell vorgenommen werden, beispielsweise beim Wechsel von Mathematik 10 zu Sport 10 (w) oder Sport 10 (m).
+                    </p>
+                </section>
+
+                <section id="tastatur">
+                    <h3>Tastatursteuerung</h3>
+                    <p>
+                        Das Programm kann vollständig mit der Tastatur gesteuert werden. Zu Beginn ist die Fachauswahl aktiv, sodass das Fach direkt eingegeben werden kann (z. B. "Et" für Ethik). Alternativ kann die Auswahl mit den <i>Pfeiltasten</i> erfolgen. Mit der <i>Tab</i>-Taste wird zur Klassenauswahl gewechselt, die ebenfalls über die Tastatur gesteuert werden kann (z. B. "8c"). Anschließend kann per <i>Tab</i>-Taste in die Notenliste gewechselt werden, die ebenfalls mit der Tastatur navigierbar ist (siehe dort). <!--Mit der Tastenkombination Alt&nbsp;+&nbsp;F kann jederzeit zur Fachauswahl zurückgekehrt werden.--> Eine vollständige Liste aller Tastenkombinationen ist im entsprechenden Hilfsabschnitt zu finden.
+                    </p>
+                </section>
+            </section>
+
+            <section id="eingabe">
+                <h2>Eingabe der Noten</h2>
+
+                <p>
+                    Sobald eine Notenliste ausgewählt wurde, können Noten, Bemerkungen und (je nach ausgewählter Beurteilungsart) Kreuze für das Arbeits- und Sozialverhalten eingegeben werden.
+                </p>
+
+                <section id="navigation_notenliste">
+                    <h3>Navigation der Notenliste</h3>
+                    <p>
+                        Die türkisfarbige Markierung zeigt die aktuell aktive Zelle, in die Eingaben vorgenommen werden. Die restliche Zeile ist heller türkis markiert. Die aktive Zelle kann mit den <i>Pfeiltasten</i> oder per <i>Linksklick</i> gewechselt werden. Während eine Zelle editiert wird, bewegen die <i>Pfeiltasten</i> zunächst die Textmarkierung (z. B. bei Bemerkungen), bevor am Zellenende in die nächste Zelle gewechselt wird. Die Tasten <i>Pos1</i> und <i>Ende</i> springen direkt an den Anfang bzw. das Ende der Zeile. Alternativ zu den <i>Pfeiltasten</i> führt die Tab-Taste in die nächste Spalte und <i>Shift + Tab</i> in die vorherige Spalte. Am Zeilenende wird dabei automatisch in die nächste Zeile gewechselt. Analog dazu führt die <i>Enter</i>-Taste unter Beibehaltung der Spalte in die nächste Zeile und <i>Shift + Enter</i> in die vorherige Zeile, mit Spaltenwechsel erst am Ende der Notenliste.
+                    </p>
+                </section>
+
+                <section id="horizontales_scrollen">
+                    <h3>Horizontales Scrollen</h3>
+                    <p>
+                        Je nach Zeugnisart und Länge der eingegebenen Bemerkungen kann die Notenliste breiter sein als der verfügbare Platz auf dem Bildschirm. In diesem Fall wird automatisch unten eine Scrollleiste eingeblendet, mit der die Notenliste horizontal gescrollt werden kann. Dabei werden die Spalten für die Nummerierung und die Namen der Schülerinnen und Schüler stets sichtbar gehalten, damit die Übersicht erhalten bleibt. Alternativ zur Scrollleiste kann auch das Mausrad zum horizontalen Scrollen verwendet werden, indem gleichzeitig die <i>Shift</i>-Taste gedrückt gehalten wird.
+                    </p>
+                </section>
+
+                <section id="falsche_eingaben">
+                    <h3>Falsche Eingaben</h3>
+                    <p>
+                        Wird ein Wert eingetragen, der für die jeweilige Notenart nicht zulässig ist (z. B. 6− als Trimesternote oder +++ als Verhaltensnote), wird die entsprechende Zelle rot markiert. Die Notenliste kann erst gespeichert werden, wenn alle falschen Eingaben entweder korrigiert oder gelöscht wurden.
+                    </p>
+                </section>
+
+                <section id="darstellung">
+                    <h3>Notendarstellung</h3>
+                    <p>
+                        Jede Note kann in zwei verschiedenen Notendarstellungen eingegeben und angezeigt werden. Trimesternoten werden beispielsweise als 2+ oder als 1,75 akzeptiert. Die Kreuze für das Arbeits- und Sozialverhalten werden im Gegensatz zu früher nicht mehr durch Ankreuzen der entsprechenden Spalte eingegeben, sondern als ++, +, - oder --, bzw. als 1, 2, 3 oder 4. Die Notendarstellung kann durch <i>Alt + Linksklick</i> auf den Kopf der entsprechenden Tabellenspalte gewechselt werden.
+                    </p>
+                </section>
+
+                <section id="standardwerte">
+                    <h3>Standardwerte (alles +) auffüllen</h3>
+                    <p>
+                        Beim Arbeits- und Sozialverhalten wird durch <i>Shift + Linksklick</i> auf den Kopf einer Tabellenspalte jede leere Zelle dieser Spalte mit der Note + gefüllt. Alternativ kann bei der Eingabe in eine Zelle <i>Shift + Pluszeichen</i> gedrückt werden. Entsprechend ist es empfehlenswert, zuerst die abweichenden Noten einzutragen und dann die freien Felder automatisch auffüllen zu lassen.
+                    </p>
+                </section>
+
+                <section id="verhalten_und_mitarbeit">
+                    <h3>Verhalten und Mitarbeit</h3>
+                    <p>
+                        Die von den Fachlehrkräften eingetragenen Noten für Verhalten und Mitarbeit erscheinen nicht direkt im Zeugnis, sondern dienen der Klassenlehrkraft als Meinungsbild. Falls die Klassenlehrkraft bereits Noten für Verhalten und Mitarbeit eingetragen hat, werden diese den Fachlehrkräften als hellgrauer Vorschlag angezeigt. Trägt auch die Fachlehrkraft eine Note ein, erscheint sie in grüner Schrift, falls sie besser ist als der Vorschlag, oder in roter Schrift, falls sie schlechter ist. Ein ToolTip zeigt zusätzlich den KL-Vorschlag an. Durch <i>Strg + Linksklick</i> auf den Kopf der Tabellenspalte wird jede leere Zelle dieser Spalte mit dem KL-Vorschlag gefüllt, durch <i>Shift + Linksklick</i> mit der Note 2. Durch <i>Alt + Linksklick</i> lässt sich die Färbung deaktivieren.
+                    </p>
+                </section>
+
+                <section id="speichern">
+                    <h3>Speichern</h3>
+                    <p>
+                        Die eingetragenen Noten und Bemerkungen werden erst dann an die Datenbank übertragen, wenn die Schaltfläche <i>Speichern</i> (Tastenkombination <i>Strg + S</i>) gedrückt wird. Dies ist nur möglich, wenn mindestens ein Eintrag geändert wurde und die Notenliste keine falschen Eingaben enthält. Eine Sicherheitsabfrage verhindert bei ungespeicherten Änderungen sowohl den Wechsel in eine andere Notenliste als auch das Beenden des Programms. Der Rechner sollte aber nicht bei geöffneter, ungespeicherter Notenliste verlassen werden.
+                    </p>
+                </section>
+
+                <section id="verwerfen">
+                    <h3>Änderungen verwerfen</h3>
+                    <p>
+                        Solange die eingetragenen Noten noch nicht an die Datenbank übertragen wurden, können die vorhandenen Änderungen über die Schaltfläche <i>Änderungen verwerfen</i> rückgängig gemacht werden. Die angezeigte Notenliste wird dann erneut aus der Datenbank geladen. Zuvor erfolgt eine Sicherheitsabfrage. 
+                    </p>
+                </section>
+
+                <section id="schliessen_und_beenden">
+                    <h3>Liste schließen und Beenden</h3>
+                    <p>
+                        Die Schaltfläche <i>Liste schließen</i> führt zurück zum Startbildschirm, so dass keine Liste mehr geöffnet ist. Im Gegensatz zum alten Programm muss dies aber nicht zwangsweise nach jeder Noteneingabe durchgeführt werden. Die Funktion dient lediglich dazu, das Programm in einem "sauberen" Zustand zu hinterlassen, wenn es nicht beendet werden soll. Ein direktes Beenden des Programms von der Notenliste aus ist aber auch problemlos möglich. In beiden Fällen erfolgt eine Sicherheitsabfrage, falls ungespeicherte Änderungen vorliegen.
+                    </p>
+                </section>
+
+                <section id="sortierung">
+                    <h3>Sortierung und Nummerierung</h3>
+                    <p>
+                        Die Notenliste ist standardgemäß alphabetisch nach dem Nachnamen, dann nach dem Rufnamen der Schülerinnen und Schüler sortiert. Daraus ergibt sich auch die Nummerierung der Zeilen. Durch <i>Linksklick</i> auf den Spaltenkopf der Nummerierungs- und Namensspalten kann die Sortierung geändert bzw. zwischen aufsteigend und absteigend geändert werden. Eine Sortierung nach den Noten ist nicht möglich.
+                    </p>
+                </section>
+
+                <section id="aspekte">
+                    <h3>Zu bewertende Aspekte</h3>
+                    <p>
+                        In Abhängigkeit von der ausgewählten Beurteilungsart (Trimesterinformation oder Zeugnis) wird automatisch die Notenart (Viertelnoten oder ganze Noten) festgelegt, und ob Verhalten und Mitarbeit in Form einer Note oder in Form der Kreuze zum Arbeits- und Sozialverhalten bewertet werden. Ebenso werden die zu bewertenden Aspekte in Abhängigkeit von Fach und Klassenstufe bestimmt, beispielsweise in Bruchsal bei der Sprachkompetenz bis Klasse 7. Die völlständige Bezeichnung der Aspekte wird als ToolTip der entsprechenden Spaltenköpfe angezeigt. Eine nähere Beschreibung der Aspekte wird noch nachgereicht.
+                    </p>
+                </section>
+
+                <section id="sperrfrist">
+                    <h3>Sperrfrist</h3>
+                    <p>
+                        Ab dem zweiten Tag nach der Notenkonferenz ist das Ändern von Noten und Bemerkungen nur noch unter Beteiligung der Schulleitung möglich. Wird danach versucht, eine Änderung vorzunehmen, erscheint eine entsprechende Meldung.
+                    </p>
+                </section>
+            </section>
+
+            <section id="bemerkungen">
+                <h2>Eingabe der Bemerkungen</h2>
+                <p>
+                    Bemerkungen können direkt in der Notenliste frei eingegeben oder mithilfe des Textbaustein-Editors aus vordefinierten Bausteinen zusammengestellt werden.
+                </p>
+
+                <section id="bemerkungen_kopieren">
+                    <h3>Bemerkungen kopieren</h3>
+                    <p>
+                        Vorhandene Bemerkungen können mit der Tastenkombination <i>Strg + C</i> kopiert und mit <i>Strg + V</i> in einem anderen Bemerkungsfeld wieder eingefügt werden. Enthält die Bemerkung den Namen des Schülers oder der Schülerin, wird dieser automatisch korrekt ersetzt.
+                    </p>
+                </section>
+
+                <section id="bedienung_textbausteine">
+                    <h3>Bedienung des Textbaustein-Editors</h3>
+                    <p>
+                        In den Feldern für Bemerkungen erscheint rechts eine kleine Schaltfläche mit drei Punkten. Darüber lässt sich der Textbaustein-Editor für diese Kategorie (Arbeitsverhalten, Sozialverhalten, Zeugnisnote oder Versetzung) öffnen. Beim Öffnen des Editors wird zunächst gegebenenfalls die in der Notenliste bereits eingegebene Bemerkung übernommen und oben im Textfeld angzeigt. Darunter werden die verfügbaren Textbausteine angezeigt, passend zur gegebenen Kategorie.
+                    </p>
+                </section>
+
+                <section id="bemerkungen_zusammenstellen">
+                    <h3>Bemerkungen zusammenstellen</h3>
+                    <p>
+                        Zum Zusammenstellen einer Bemerkung muss zunächst links eine Grundbemerkung ausgewählt werden. Diese kann anschließend rechts mit bis zu drei Modifikatoren (modal, zeitlich und qualitativ) ergänzt werden. Jeder Modifikator erlaubt nur einen Baustein. Es stehen stets alle Bausteine zur Auswahl, es können also auch widersinnige Kombinationen enstehen. Beim Anklicken eines Bausteins wird er automatisch ganz oben im Textfeld hinzugefügt, wobei er ggf. den zuvor gewählten Baustein ersetzt. Erneutes Anklicken eines ausgewählten Bausteins entfernt diesen wieder. Die zusammengestellte Bemerkung kann über die Übernehmen-Schaltfläche oder die Eingabetaste in die Notenliste übertragen werden, oder per Doppelklick auf einen Baustein. Über die Schaltfläche <i>Abbrechen</i> oder die Escape-Taste kann der Textbaustein-Editor jederzeit geschlossen werden, ohne dass die Bemerkung in der Notenliste geändert wird.
+                    </p>
+                </section>
+
+                <section id="frei_vs_zusammengestellt">
+                    <h3>Freie/zusammengestellte Bemerkung</h3>
+                    <p>
+                        Die Bemerkung kann jederzeit im Textfeld frei bearbeitet werden. Solange dort allerdings eine freie Bemerkung steht, ist die Auswahl der Textbausteine gesperrt, um ein Überschreiben der vorhandenen Bemerkung zu verhindern. Zur Freigabe der Bausteine muss die vorhandene Bemerkung zuerst gelöscht werden, über die Schaltfläche <i>Löschen</i>. Wurde eine zusammengestellte Bemerkung danach durch freie Bearbeitung verändert, kann sie über die Schaltfläche <i>Zurücksetzen</i> wieder auf die zuletzt zusammengestellte Bemerkung zurückgesetzt werden.
+                    </p>
+                </section>
+
+            </section>
+
+            <section id="arbeitsgemeinschaften">
+                <h2>Eingabe der AGs</h2>
+                <p>
+                    Über das "Fach" <i>AGs</i> können die Arbeitsgemeinschaften angelegt und ihre Mitglieder verwaltet werden.
+                </p>
+
+                <section id="ags_im_zeugnis">
+                    <h3>AGs im Zeugnis</h3>
+                    <p>
+                        Die AGs, an denen die Schülerinnen und Schüler während des Schuljahres teilgenommen haben, werden im Zeugnis aufgeführt. Die Eintragung erfolgt durch die AG-Lehrkräfte wie hier im Folgenden beschrieben. Die Klassenlehrkräfte können die Auflistung in der entsprechenden Ansicht einsehen.
+                    </p>
+                </section>
+
+                <section id="ag_filter">
+                    <h3>Filter für AGs</h3>
+                    <p>
+                        Über den Listen für die Verwaltung der AGs gibt es jeweils ein Textfeld, mit dem die entsprechende Liste gefiltert werden kann. Durch Eingabe eines Suchbegriffs werden nur die Listeninhalte angezeigt, die den Suchbegriff enthalten, beispielsweise alle AGs mit "Chor" oder alle Schülerinnen und Schüler mit "ristin". Mit der Schaltfläche ✕ kann der Filter zurückgesetzt werden, so dass wieder die vollständige Liste angezeigt wird.
+                    </p>
+                </section>
+
+                <section id="ag_verwaltung">
+                    <h3>Verwaltung der AGs</h3>
+                    <p>
+                        Links befindet sich eine Liste aller bereits angelegten AGs. Durch Auswählen einer AG werden zwei weitere Listen eingeblendet mit den AG-Mitgliedern bzw. den verfügbaren Schülerinnen und Schülern. Über der AG-Liste befinden sich drei Schaltflächen. Mit ＋ kann eine neue AG angelegt werden. Mit ✎ und － kann die ausgewählte AG umbenannt bzw. gelöscht werden, es sei denn sie ist an einem anderen Standort oder in einem anderen Schuljahr belegt. Beim Umbenennen wird in diesem Fall stattdessen eine neue AG angelegt und die Liste der Mitglieder darauf übertragen.
+                    </p>
+                </section>
+
+                <section id="ag_mitglieder">
+                    <h3>Verwaltung der AG-Mitglieder</h3>
+                    <p>
+                        Durch Auswahl eines Namens in der Liste der verfügbaren Schülerinnen und Schüler und Klicken auf die Schaltfläche ← (oder Doppelklick oder Drücken der <i>Enter</i>-Taste) wird der ausgwählte Name zur AG hinzugefügt. Durch Auswahl eines Namens in der Liste der AG-Mitglieder und Klicken auf die Schaltfläche → (oder Doppelklick oder Drücken der <i>Entf</i>-Taste) wird der ausgewählte Name aus der AG entfernt. Es können auch mehrere Namen gleichzeitig ausgewählt werden mithilfe der <i>Strg</i>- und <i>Shift</i>-Tasten, durch Ziehen der Maus oder durch die Tastenkombination <i>Strg + A</i>. Über der Liste der verfügbaren Schülerinnen und Schüler befindet sich eine Combobox, mit der die Liste umgeschalten werden kann zwischen allen Schülerinnen und Schülern des Standorts, nur einer einzelnen Klasse oder Klassenstufe oder den Schülerinnen und Schülern, die im letzten Schuljahr an der AG teilgenommen haben, falls vorhanden. Zudem befindet sich ganz rechts eine Combobox, mit der die Sortierung der Namen zwischen Nachname und Rufname gewechselt werden kann.
+                    </p>
+                </section>
+
+                <section id="ag_speichern">
+                    <h3>AG-Änderungen speichern und verwerfen</h3>
+                    <p>
+                        Sämtliche Änderungen an den AGs und/oder ihren Mitgliedern müssen explizit mit der Schaltfläche <i>Speichern</i> (Tastenkombination <i>Strg + S</i>) gespeichert werden. Es ist auch möglich, die Änderungen zu verwerfen und zum zuletzt gespeicherten Stand zurückzukehren mit der Schaltfläche <i>Änderungen verwerfen</i>. Falls die AG-Verwaltung ohne Speichern der Änderungen verlassen wird, erscheint eine entsprechende Sicherheitsabfrage - alles genau wie bei den Notenlisten.
+                    </p>
+                </section>
+
+            </section>
+
+            <section id="kl_allgemein">
+                <h2>Klassenlehrkräfte: Allgemein</h2>
+                <p>
+                    Über das "Fach" <i>Klassenlehrkraft</i> kann auf die Inhalte zur Verwaltung der Klasse zugegriffen werden, für Trimesterinformation und Zeugnis.
+                </p>
+
+                <section id="notenuebersicht">
+                    <h3>Notenübersicht und Durchschnitt</h3>
+                    <p>
+                        Die Notenübersicht zeigt die Noten aller Fächer der Klasse. Dabei werden Kernfächer blau markiert und kritische Noten (schlechter als 4,0) dunkelorange. Nicht belegte Fächer werden mit einem "–" markiert, fehlende Noten sind erkennbar an leeren Zellen. Ist ein Fach in der Klasse nicht belegt (z.B. weil Spanisch nur in der Parallelklasse gewählt wurde), wird die entsprechende Spalte ausgeblendet. Der Durchschnitt der Kernfächer und der Durchschnitt der maßgebenden Fächer (vgl. Notenverordnung) wird ebenfalls angezeigt.
+                    </p>
+                </section>
+
+                <section id="name_klassenlehrkraft">
+                    <h3>Name der Klassenlehrkraft</h3>
+                    <p>
+                        Der Name der Klassenlehrkraft entstammt wie die restlichen Daten zur Klasse aus der zentralen Verwaltungs-Datenbank <i>Atlantis</i> der Schule. Er erscheint im Trimesterinformation und im Zeugnis unter dem Unterschriftenfeld zwecks Lesbarkeit in Druckschrift. Momentan ist keine Möglichkeit vorgesehen, dort zwei Klassenlehrkräfte oder wechselnde Lehrkräfte einzutragen.
+                    </p>
+                </section>
+
+            </section>
+
+            <section id="kl_trimesterinformationen">
+                <h2>Klassenlehrkräfte: Trimesterinformationen</h2>
+                <p>
+                    Für die Trimesterinformationen der Unter- und Mittelstufe gelten die folgenden Sonderregeln.
+                </p>
+
+                <section id="versetzungsprognose">
+                    <h3>Versetzungsprognose</h3>
+                    <p>
+                        In der <i>Bemerkung zur Versetzung</i> kann festgehalten werden, ob es voraussichtlich Probleme bezüglich der Versetzung geben wird. Sie erscheint auf der ersten Seite der Trimesterinformation unter den Noten als "Hinweis". Anders als im Zeugnis werden hier keine Vorschläge automatisch berechnet. Für eine einheitliche Formulierung steht der Textbausteineditor zur Verfügung.
+                    </p>
+                </section>
+
+                <section id="klassenverhalten">
+                    <h3>Klassenverhalten</h3>
+                    <p>
+                        Das Verhalten der Schülerinnen und Schüler in der Klassengemeinschaft wird über die Aspekte "Verhalten außerhalb des Unterrichts" und "Engagement in der Klasse" sowie die zugehörige Bemerkung bewertet. Letztere erscheint gemeinsam mit den Bemerkungen der Fachlehrkräfte zum Sozialverhalten.
+                    </p>
+                </section>
+            </section>
+
+            <section id="kl_zeugnisse">
+                <h2>Klassenlehrkräfte: Zeugnisse</h2>
+
+                <p>
+                    Für die Zeugnisse der Unter- und Mittelstufe gelten die folgenden Sonderregeln.
+                </p>
+
+                <section id="ansichten">
+                    <h3>Ansichten</h3>
+                    <p>
+                        Über <i>Ansicht</i> können anstelle der Zeugnisnoten auch ausgewählt werden:
+                        <ul>
+                            <li>die Verhaltensnoten aller Fächer der Klasse</li>
+                            <li>die Mitarbeitsnoten aller Fächer der Klasse</li>
+                            <li>die Liste der AGs und ggf. der Sprachzertifikate</li>
+                        </ul>
+                    </p>
+                </section>
+
+                <section id="verhalten_mitarbeit_kl">
+                    <h3>Verhalten und Mitarbeit</h3>
+                    <p>
+                        Nur die von der Klassenlehrkraft eingetragenen Noten für Verhalten und Mitarbeit werden im Zeugnis gedruckt. Die von den Fachlehrkräften eingetragenen Noten können als Meinungsbild angezeigt werden. Falls die Klassenlehrkraft bereits eigene Noten eingetragen hat, erscheinen die Noten der Fachlehrkräfte (und deren Durchschnitte) in grüner Schrift, falls sie besser sind als die KL-Note, oder in roter Schrift, falls sie schlechter sind. Falls die Klassenlehrkraft keine eigenen Noten eingetragen hat, wird stattdessen der Durchschnitt der maßgebenden Fächern als hellgrauer Vorschlag angezeigt, vorausgesetzt mindestens drei Fachlehrkräfte haben Noten eingetragen. Durch <i>Strg + Linksklick</i> auf den Kopf der Tabellenspalte wird jede leere Zelle dieser Spalte mit dem Vorschlag gefüllt, durch <i>Shift + Linksklick</i> mit der Note 2. Durch <i>Alt + Linksklick</i> lässt sich die Färbung deaktivieren.
+                    </p>
+                </section>
+
+                <section id="lob_und_preis">
+                    <h3>Lob und Preis</h3>
+                    <p>
+                        In Abhängigkeit vom Notenbild wird automatisch berechnet, ob ein Preis oder ein Lob erteilt wird. Wenn alle Noten eingetragen sind, erscheint der entsprechende Vorschlag in der Spalte <i>Lob &amp; Preis</i> in grauer Schrift. Per <i>Linksklick</i> oder Drücken der <i>Leertaste</i> kann der Vorschlag zunächst übernommen werden. Eine Wiederholung von <i>Linksklick/Leertaste</i> wechselt zu den anderen Optionen. Falls eine andere Option gewählt wird, als die Berechnung ergeben hat, erscheint sie in grüner Schrift, falls sie besser ist als der Vorschlag, oder in roter Schrift, falls sie schlechter ist. Ein ToolTip gibt in diesem Fall die vorgeschlagene Option an. Durch <i>Alt + Linksklick</i> auf den Spaltenkopf lässt sich die Färbung deaktivieren. Falls sich der Vorschlag aufgrund von Änderungen im Notenbild nach der Festlegung ändert, wird die Festlegung aufgehoben und muss ausgehend vom neuen Vorschlag erneut bestätigt werden. Fehlen Zeugnisnoten, wird der Vorschlag so berechnet, als gäbe es die fehlende Note nicht, und er erscheint kursiv gedruckt, als Prognose statt als fundierter Vorschlag. Die Festlegung kann trotzdem erfolgen, aber es erscheint eine entsprechende Warnung. Fehlt die Verhaltensnote, kann keine Festlegung erfolgen. Eine Prognose wird aber auch in diesem Fall schon angezeigt, auf Basis des Vorschlags für die Verhaltensnote, falls vorhanden.
+                    </p>
+                </section>
+
+                <section id="versetzungsbemerkung">
+                    <h3>Versetzungsbemerkung</h3>
+                    <p>
+                        In Abhängigkeit vom Notenbild wird automatisch berechnet, ob eine Versetzung in die nächste Klasse stattfindet oder nicht. Wenn alle Noten eingetragen sind, erscheint der entsprechende Vorschlag in der Spalte <i>Bemerkung Versetzung</i> in grauer Schrift. Per <i>Linksklick</i> oder Drücken der <i>Leertaste</i> kann der Vorschlag zunächst übernommen werden. Eine Wiederholung von <i>Linksklick/Leertaste</i> wechselt zu den anderen Bemerkungen, die entsprechend dem Notenbild ebenfalls möglich sind. Beispielsweise kann vom Vorschlag "versetzt" nur gewechselt werden zu "wiederholt freiwillig", nicht aber zu "muss das Gymnasium verlassen". Derartige Abweichungen sind nur unter Beteiligung der Schulleitung möglich. Falls sich der Vorschlag aufgrund von Änderungen im Notenbild nach der Festlegung ändert, wird die Festlegung aufgehoben und muss ausgehend vom neuen Vorschlag erneut bestätigt werden. Fehlen Zeugnisnoten, wird der Vorschlag so berechnet, als gäbe es die fehlende Note nicht, und er erscheint kursiv gedruckt, als Prognose statt als fundierter Vorschlag. In diesem Fall kann die Angabe noch nicht bestätigt werden, und ein ToolTip erläutert den Grund.
+                    </p>
+                </section>
+
+                <section id="versetzung_ausgesetzt">
+                    <h3>Versetzung ausgesetzt nach §3</h3>
+                    <p>
+                        Wenn eine oder mehrere Noten für individuelle Schülerinnen und Schüler fehlen (anstatt für die gesamte Klasse), ergibt sich der Vorschlag "Versetzung ausgesetzt gemäß § 3 der Versetzungsordnung". Diese Bemerkung kann nur unter Beteiligung der Schulleitung bestätigt werden. Einzige Ausnahme ist, wenn nur die Sportnote fehlt und ein Attest dafür vorliegt, siehe unten.
+                    </p>
+                </section>
+
+                <section id="sportattest">
+                    <h3>Sportattest</h3>
+                    <p>
+                        Wenn die Sportnote fehlt, kann dennoch ein reguläres Zeugnis ausgestellt werden, vorausgesetzt ein entsprechendes Attest liegt vor. Für diesen Fall erscheint in der Spalte der Sportnote anstelle einer leeren Zelle der hellgraue Vorschlag "SA" für Sportattest. Dieser Vorschlag kann durch <i>Linksklick</i> oder Drücken der <i>Leertaste</i> übernommen werden. Dadurch wird die fehlende Sportnote bei der Berechnung des Versetzungsvorschlags ignoriert, so dass in Abhängigkeit vom übrigen Notenbild "versetzt" oder "nicht versetzt" vorgeschlagen wird und bestätigt werden kann. Sollte danach doch noch eine Sportnote eingetragen werden, wird die Versetzungsbemerkung zurückgesetzt. Anschließend muss sie ggf. erneut von der Klassenlehrkraft bestätigt werden.
+                    </p>
+                </section>
+
+                <section id="zusatzbemerkung">
+                    <h3>Zusatzbemerkungen</h3>
+                    <p>
+                        Zusätzliche Bemerkungen zum Zeugnis können nur unter Beteiligung der Schulleitung hinzugefügt werden.
+                    </p>
+                </section>
+
+                <section id="ags_sprachzertifikate">
+                    <h3>AGs &amp; Sprachzertifikate</h3>
+                    <p>
+                        Die AGs, an denen die Schülerinnen und Schüler während des Schuljahres teilgenommen haben, werden im Zeugnis aufgeführt. Die Eintragung erfolgt durch die AG-Lehrkräfte. Nähere Informationen dazu im entsprechenden Abschnitt der Hilfe.
+                        In manchen der höheren Klassen erhalten die Schülerinnen und Schüler Sprachzertifikate nach dem Gemeinsamen Europäischen Referenzrahmen (GER). Anhand der Noten in der ersten und zweiten Fremdsprache wird automatisch berechnet, welche GER-Stufe erreicht wurde.
+                    </p>
+                </section>
+
+            </section>
+
+            <section id="drucken">
+                <h2>Drucken</h2>
+
+                <p>
+                    Das Druckfenster ist von jeder Notenliste aus über die Schaltfläche <i>Drucken</i> erreichbar. Dafür muss die ausgewählte Notenliste aktuell sein, damit stets der korrekte Zustand der Datenbank wiedergegeben wird.
+                </p>
+
+                <section id="druckerselektion">
+                    <h3>Auswahl des Druckers</h3>
+                    <p>
+                        Die Auswahl des Druckers erfolgt nicht über einen separaten Druckdialog, sondern direkt im Druckfenster der Noten-Eule links oben. Der standardgemäß ausgewählte Drucker wird vom Betriebssystem festgelegt. Unter der Auswahl kann die Anzahl zu druckender Kopien angegeben werden, und im Falle mehrerer Seiten, ob beidseitig gedruckt werden soll. Die Schaltfläche <i>Druckeinstellungen</i> öffnet den vom Druckertreiber bereitgestellten Einstellungsdialog.
+                    </p>
+                </section>
+
+                <section id="druckeinstellungen">
+                    <h3>Druckeinstellungen</h3>
+                    <p>
+                        Standardgemäß wird mit den zum Druckerzeugnis passenden Druckeinstellungen gedruckt: A4 oder A5, Querformat oder Hochformat, schwarz-weiß, einseitig oder zweiseitig wie ausgewählt. Über die Schaltfläche <i>Druckeinstellungen</i> können diese Einstellungen manuell angepasst werden, oder zusätzliche Funktionen wie das Drucken zweier Seiten auf ein Blatt aktiviert werden. Die tatsächlich angebotenen Funktionen hängen vom jeweiligen Gerät ab.
+                    </p>
+                </section>
+
+                <section id="druckertreiberprobleme">
+                    <h3>Druckertreiber-Probleme</h3>
+                    <p>
+                        Leider ignorieren manche Druckertreiber die von der Noten-Eule übermittelten Einstellungen. Falls die Standard-Einstellungen des Druckers davon abweichen (z.B. beidseitig drucken aktiviert, obwohl man einseitig drucken möchte), muss der Einstellungsdialog des Druckertreibers verwendet werden: die dort ausgewählten Einstellungen werden dann tatsächlich umgesetzt. Falls die Noten-Eule einen problematischen Druckertreiber erkennt, erscheint ein entsprechender Hinweis, aus dem heraus die Druckeinstellungen direkt geöffnet werden können.
+                    </p>
+                </section>
+
+                <section id="druckauswahl">
+                    <h3>Auswahl des Druckerzeugnisses</h3>
+                    <p>
+                        In der Seitenliste links kann ausgewählt werden, was gedruckt werden soll. Je nach ausgewählter Liste stehen dabei unterschiedliche Druckerzeugnisse zur Verfügung. Beispielsweise ist der Druck der Zeugnisse nicht verfügbar, wenn als Beurteilung eine Trimesterinformation ausgewählt wurde. Analog enthält die Notenübersicht für die Fachlehrkräfte keine Einträge zum Arbeits- und Sozialverhalten, solange als Beurteilung ein Zeugnis der Unterstufe ausgewählt ist. Nach Auswahl des Druckerzeugnisses erscheinen darunter weitere Einstellungsmöglichkeiten.
+                    </p>
+                </section>
+
+                <section id="notenlisten_drucken">
+                    <h3>Notenliste/Notenübersicht drucken</h3>
+                    <p>
+                        Von der Notenliste einer Fachlehrkraft aus und von der Notenübersicht einer Klassenlehrkraft aus kann die aktuell angezeigte Liste gedruckt werden. Dabei kann je nach Liste ausgewählt werden, ob die Noten bzw. Kreuze gedruckt werden sollen, und ob und in welcher Form die Bemerkungen gedruckt werden sollen, usw. Zur Erleichterung der Lesbarkeit werden alternierende Zeilen hellgrau unterlegt markiert und die Aspekte des Arbeitsverhaltens bzw. des Klassenverhaltens sowie die Durchschnittsnoten etwas dunkler. Kritische Noten werden als Hinweis dunkelgrau unterlegt markiert, und Kernfachnoten fett gedruckt. Diese Hervorhebungen lassen sich individuell deaktivieren. Die Schriftgröße wird automatisch so eingestellt, dass möglichst alle Inhalte dargestellt werden können, ohne abgeschnitten zu werden. Sie kann aber auch manuell im sich dadurch ergebenden Rahmen geändert werden. Falls nicht alle Inhalte in einer Zeile pro Schülerin und Schüler dargestellt werden können, wird automatisch auf zwei Zeilen umgestellt. Auch diese Einstellung lässt sich je nach Umständen gegebenenfalls ändern. Im zweizeiligen Modus erstreckt sich die Liste bei großer Schriftart gegebenenfalls über zwei Seiten, die dann standardgemäß beidseitig auf ein Blatt gedruckt werden.
+                    </p>
+                </section>
+
+                <section id="trimesterinformation_drucken">
+                    <h3>Trimesterinformationen drucken</h3>
+                    <p>
+                        Von jeder Notenliste aus können die Trimesterinformationen der entsprechenden Schülerinnen und Schüler (gegebenenfalls klassenübergreifend) gedruckt werden. Falls die Anzahl Fächer und/oder Bemerkungen nicht zu groß dafür ist, werden Arbeits- und Sozialverhalten auf eine gemeinsame Seite gedruckt. Alternativ können explizit einzelne der drei Seiten ausgewählt werden. Zudem lässt sich bestimmen, ob für eine einzelne Person oder für die gesamte Klasse gedruckt werden soll. In letzterem Fall zeigt die Vorschau nur die Seiten der ersten Person der Klassenliste an. Für beidseitigen Druck wird im Falle von drei Seiten eine Leerseite nach den Leistungen eingefügt, so dass diese auf ein eigenes Blatt und das Arbeits- und Sozialverhalten doppelseitig gedruckt wird.
+                    </p>
+                </section>
+
+                <section id="zeugnis_drucken">
+                    <h3>Zeugnisse drucken</h3>
+                    <p>
+                        Der Druck der Zeugnisse ist noch nicht implementiert, wird aber rechtzeitig zur Verfügung gestellt.
+                    </p>
+                </section>
+
+                <section id="Druckstatus">
+                    <h3>Druckstatus</h3>
+                    <p>
+                        Die Statusleiste zeigt an, wenn eine Druckvorschau erstellt wird, das Drucken vorbereitet wird und der Druckauftrag gesendet wird. Falls der Drucker nicht reagiert, kann auf diese Weise überprüft werden, ob die Noten-Eule noch arbeitet oder ob es beispielsweise Probleme mit der Verbindung zum Drucker gibt. Sobald der Druckauftrag erfolgreich gesendet wurde, kann vonseiten der Noten-Eule nichts mehr geändert werden, der eigentliche Druck obliegt dann der Druckfunktion des Betriebssystems.
+                    </p>
+                </section>
+
+            </section>
+
+            <section id="allgemeines">
+                <h2>Allgemeines</h2>
+
+                <p>
+                    Hier befinden sich zusätzliche Informationen zur allgemeinen Funktionsweise des Programms.
+                </p>
+
+                <section id="statusleiste">
+                    <h3>Statusleiste</h3>
+                    <p>
+                        Die Statusleiste am unteren Rand des Programms ist zweigeteilt: links befinden sich Informationen zum letzten Zugriff auf die Datenbank. Bei den Notenlisten wird hier angegeben, wann zuletzt ein Eintrag in dieser Notenliste gespeichert wurde. Rechts befinden sich Informationen zum Zustand der Notenliste, also ob die angezeigten Werte dem Stand der Datenbank entsprechen oder ob Einträge demgegenüber geändert wurden. Das Druck-Fenster hat eine eigene Statusleiste, in der sich Informationen zum Stand des Druckvorgangs befinden. Beim Speichern oder Drucken erscheint eine kurze grüne Animation, die den erfolgreichen Abschluss signalisiert und auf die entsprechende Meldung in der Statusleiste hinweist.
+                    </p>
+                </section>
+
+                <section id="tooltips">
+                    <h3>ToolTips</h3>
+                    <p>
+                        Verschiedene Bedienelemente zeigen zusätzliche Informationen an, wenn der Mauszeiger darauf ruhen bleibt. Dies gilt insbesondere Spaltenköpfe in der Notenliste (für die vollständigen Bezeichnungen der verschiedenen zu bewertenden Aspekte) und für ausgegraute Schaltflächen (für Informationen, warum z.B. das Speichern oder Drucken momentan nicht möglich ist).
+                    </p>
+                </section>
+
+                <section id="gruene_animation">
+                    <h3>Grüne Animation</h3>
+                    <p>
+                        Beim Speichern einer Notenliste und beim Abschicken eines Druckauftrags oder einer Rückmeldung erscheint eine kurze grüne Animation, die den erfolgreichen Abschluss signalisiert und auf die entsprechende Meldung in der Statusleiste hinweist. Das Programm kann währenddessen normal weiter bedient werden.
+                    </p>
+                </section>
+
+                <section id="hellgraue_eintraege">
+                    <h3>Hellgraue Einträge</h3>
+                    <p>
+                        Für die Zeugnisse der Unter- und Mittelstufen werden an mehreren Stellen unter Umständen Einträge in hellgrauer Schrift angezeigt. Dies sind Vorschläge, die automatisch berechnet und angezeigt werden. Sie ersetzen nicht die regulären, manuell eingegebenen Einträge, sondern dienen lediglich als Orientierungshilfe, und müssen explizit übernommen oder abgeändert werden. Bei Noten geschieht dies durch Eingabe einer eigenen Note oder durch Übernahme mit <i>Strg + Linksklick</i> auf den Spaltenkopf. Die anderen Vorschläge können durchgewechselt werden mit <i>Linksklick</i> auf den Eintrag bzw. Drücken der <i>Leertaste</i> wenn der Vorschlag markiert ist. Sollte das Notenbild für einen fundierten Vorschlag nicht ausreichen, erscheint stattdessen eine Prognose, kursiv gedruckt. Diese kann dann gegebenenfalls noch nicht bestätigt werden. Es erscheinen im Einzelnen, falls die entsprechenden Einträge vorhanden sind:
+                        <ul>
+                            <li>in den Notenlisten der Fachlehrkräfte die Noten für Verhalten und Mitarbeit, die von der Klassenlehrkraft eingetragen wurden.</li>
+                            <li>
+                                in der Notenübersicht der Klassenlehrkräfte:
+                                <ul>
+                                    <li>der gerundete Durchschnitt der Noten für Verhalten und Mitarbeit, die von den Fachlehrkräften eingetragen wurden, sofern mindestens drei Noten vorliegen.</li>
+                                    <li>der Vorschlag für die Bemerkung zur Versetzung.</li>
+                                    <li>der Vorschlag für Lob und Preis, sofern genügend Noten vorliegen, inklusive der Verhaltensnote. </li>
+                                    <li>in der Spalte zur Sportnote der Eintrag "SA" für ein Sportattest zur Ersetzung der fehlenden Sportnote.</li>
+                                </ul>
+                        </ul>
+                    </p>
+                </section>
+
+                <section id="verbindungsprobleme">
+                    <h3>Verbindungsprobleme</h3>
+                    <p>
+                        Falls der Datenbankserver nicht erreichbar sein sollte oder es Probleme innerhalb der Datenbank geben sollte, erscheint im Allgemeinen eine entsprechende Fehlermeldung. Die Statusleiste zeigt gegebenenfalls weitere Informationen an. Je nach Problem kann versucht werden, den Vorgang zu wiederholen oder die Liste zu wechseln. Im Zweifelsfall bitte die Ansprechperson des Standorts zur Hilfe holen und Rückmeldung geben.
+                    </p>
+                </section>
+
+                <section id="rufname">
+                    <h3>Rufname vs. Vorname(n)</h3>
+                    <p>
+                        Auf Trimesterinformation und Zeugnis wird stets der vollständige Name der Schülerinnen und Schüler gedruckt, inklusive aller Vornamen. In der Notenliste und dem Textbaustein-Editor wird standardgemäß nur der Rufname angezeigt, beides gemäß der Verwaltungs-Datenbank. Per <i>Alt + Linksklick</i> auf den Spaltenkopf kann dazwischen umgeschalten werden. Bei Fehlern in der Schreibweise oder im Falle eines anderen bevorzugten Rufnamens muss die Korrektur über das Sekretariat vorgenommen werden.
+                    </p>
+                </section>
+
+                <section id="weitere_sprachen">
+                    <h3>Weitere Sprachen</h3>
+                    <p>
+                        Manche Schülerinnen und Schüler legen eine Feststellungsprüfung ab oder erhalten Sprachunterricht in Sprachen, die in anderen Klassen nicht unterrichtet werden, häufig ihrer Herkunftssprache. Manchmal wird die entsprechende Note anstelle der zweiten Fremdsprache Französisch vergeben, manchmal zusätzlich. In beiden Fällen muss die Sprache dafür momentan noch manuell in der Datenbank eingetragen werden. Daher bitte eine Nachricht direkt an <i>Robert Jungblut</i> senden mit Angabe der Sprache und des Namens und der Klasse der Schülerin oder des Schülers.
+                    </p>
+                </section>
+
+                <section id="tastenkombinationen">
+                    <h3>Tastenkombinationen</h3>
+                    <p>
+                        Die folgenden Tasten- und Mauskombinationen können (je nach Stelle des Programms) zur Steuerung des Programms verwendet werden.
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th style="text-align: left; padding-right: 40px;">Kombination</th>
+                                    <th style="text-align: left;">Aktion</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td style="padding-right: 40px;">Strg + S</td>
+                                    <td>Notenliste speichern</td>
+                                </tr>
+                                <tr>
+                                    <td style="padding-right: 40px;">Strg + P</td>
+                                    <td>Notenliste drucken</td>
+                                </tr>
+                                <tr>
+                                    <td style="padding-right: 40px;">Strg + W</td>
+                                    <td>Notenliste schließen</td>
+                                </tr>
+                                <tr>
+                                    <td style="padding-right: 40px;">Strg + Q</td>
+                                    <td>Programm beenden</td>
+                                </tr>
+                                <tr>
+                                    <td style="padding-right: 40px;">Strg + C</td>
+                                    <td>Zelleninhalt kopieren</td>
+                                </tr>
+                                <tr>
+                                    <td style="padding-right: 40px;">Strg + V</td>
+                                    <td>Zelleninhalt einfügen</td>
+                                </tr>
+                                <tr>
+                                    <td style="padding-right: 40px;">Shift + Linksklick auf Spaltenkopf</td>
+                                    <td>Alle leeren Zellen der Spalte auf „+" setzen</td>
+                                </tr>
+                                <tr>
+                                    <td style="padding-right: 40px;">Shift + Pluszeichen</td>
+                                    <td>Alle leeren Zellen der aktuellen Spalte auf „+" setzen</td>
+                                </tr>
+                                <tr>
+                                    <td style="padding-right: 40px;">Strg + Linksklick auf Spaltenkopf</td>
+                                    <td>Alle leeren Zelle der Spalte auf den vorgeschlagenen Wert setzen</td>
+                                </tr>
+                                <tr>
+                                    <td style="padding-right: 40px;">Alt + Linksklick auf Spaltenkopf</td>
+                                    <td>Notendarstellung der Spalte wechseln (Notenwert / Notenbezeichnung)</td>
+                                </tr>
+                                <tr>
+                                    <td style="padding-right: 40px;">Escape</td>
+                                    <td>Dialogfenster schließen</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </p>
+                </section>
+            </section>
+
+            <section id="administration">
+                <h2>Administration</h2>
+
+                <p>
+                    Das Administrations-Fenster ist passwortgeschützt und über die Schaltfläche <i>Administraton</i> erreichbar.
+                </p>
+
+                <section id="standort">
+                    <h3>Auswahl des Standorts</h3>
+                    <p>
+                        Das Programm kann nur gestartet werden, wenn genau ein Standort ausgewählt wurde. Beim ersten Start auf einem lokalen PC wird das Administrations-Fenster daher automatisch und ohne Passwortabfrage geöffnet. Die Eintragung stellt eine Verbindung zum Datenbankserver voraus.
+                    </p>
+                </section>
+
+                <section id="verbindungsdaten">
+                    <h3>Verbindungsdaten</h3>
+                    <p>
+                        Die korrekten Daten für den Datenbank-Server, den Namen der Datenbank, den Benutzernamen und das Passwort werden automatisch mit dem Programm ausgeliefert. Sollten sich die Verbindungsdaten später ändern, können sie manuell auf jedem Gerät angepasst werden. Die eingetragenen Verbindungsdaten können über die entsprechenden Schaltflächen getestet oder auf die im Programm Standardwerte zurückgesetzt werden.
+                    </p>
+                </section>
+
+                <section id="stammdaten_importieren">
+                    <h3>Stammdaten aus Atlantis importieren</h3>
+                    <p>
+                        Die Daten der Schülerinnen und Schüler, Lehrkräfte und Klassen werden aus der zentralen Verwaltungs-Datenbank <i>Atlantis</i> der Schule importiert. Dazu müssen sie zunächst aus Atlantis exportiert werden, im SQL-Format, die Namen können frei gewählt werden. Die drei SQL-Dateien können anschließend über die entsprechenden Schaltflächen im Administrations-Fenster ausgewählt und importiert werden, wahlweise gleichzeitig oder einzeln. In letzterem Fall muss aber darauf geachtet werden, dass die Lehrkräfte vor den Klassen importiert werden müssen, falls eine Klassenlehrkraft andernfalls noch nicht in den Lehrkräften eingetragen ist.
+                    </p>
+                </section>
+
+                <section id="klassenzuordnung_faecherwahl">
+                    <h3>Klassenzuordnung und Fächerwahl</h3>
+                    <p>
+                        Nach dem Import der Atlantis-Stammdaten müssen daraus die Schülerinnen und Schüler den Klassen zugeordnet und die Fächerwahl getroffen werden. Die Zuordnung geschieht immer nur für die kommende Kombination aus Schuljahr und Zeugnisphase, da Klassenliste und Fächerwahl sich während des Schuljahrs ändern kann. Entsprechend müssen die beiden Informationen im Adiminstrations-Fenster ausgewählt werden, bevor die Schaltfläche zum Ausführen aktiviert wird. Die weiteren Schritte der Vorverarbeitung wie beispielsweise die Zuordnung der Klassen zu den Zeugnisarten - die letztlich darüber entscheidet ob eine Beurteilung für eine Klasse aufgeführt wird oder nicht - müssen momentan noch manuell in der Datenbank vorgenommen werden. Ebenso werden die optional und wahlweise belegten Fächer momentan noch fest im Programm vorgegeben anstatt dynamisch aus der Datenbank entnommen zu werden.
+                    </p>
+                </section>
+
+                <section id="admin-speichern">
+                    <h3>Speichern der Administrationsdaten</h3>
+                    <p>
+                        Die Administrationsdaten zu speichern ist nur möglich, wenn die eingetragenen Verbindungsdaten getestet wurden, der Standort ausgewählt wurde und die Daten nicht bereits genau so gespeichert sind. Die Daten werden in einer config.json-Datei im LocalAppData-Ordner gespeichert. Die Verbindungsdaten werden nur gespeichert, wenn sie sich von den Standardwerten unterscheiden.
+                    </p>
+                </section>
+            </section>
+
+            <section id="schulleitungs-modus">
+                <h2>Schulleitungs-Modus</h2>
+                <p>
+                    Der Schulleitungs-Modus ist passwortgeschützt und über die Schaltfläche <i>Administraton</i> erreichbar. Er färbt das Programmfenster golden und bleibt bis zur Beendigung des Programms aktiv.
+                </p>
+
+                <section id="schulleitungs-funktionen">
+                    <h3>Funktionen im SL-Modus</h3>
+                    <p>
+                        Nur im Schulleitungs-Modus können...
+                        <ul>
+                            <li>Noten und Bemerkungen nach der Sperrfrist geändert werden.</li>
+                            <li>Zeugnisse ausgestellt werden trotz fehlender Noten nach §3 (Ausnahme: Sportattest).</li>
+                            <li>andere Versetzungsbemerkungen vergeben werden, als das Notenbild gemäß Notenverordnung ergibt.</li>
+                            <li>freie Bemerkungen zu Zeugnissen hinzugefügt werden.</li>
+                        </ul>
+                    </p>
+                </section>
+            </section>
+
+            <section id="version">
+                <h2>Programmversion</h2>
+
+                <p>
+                    Noten-Eule v<span id="programmversion">[wird geladen]</span><br>
+                    Programmierung, Datenbank-Entwicklung, Gestaltung der Benutzeroberfläche und des Druckbilds: Robert Jungblut<br>
+                    Druckfunktion: Robert Jungblut, Sebastian Lang<br>
+                    (c) 2026 Heisenberg-Gymnasium e.V., Tennesseeallee 111, 76149 Karlsruhe<br>
+                </p>
+
+                <section id="geplante_funktionen">
+                    <h3>Geplante Funktionen</h3>
+                    <p>
+                        In dieser Version noch nicht vorhanden aber für die Zukunft geplant sind die folgenden Funktionen:<br>
+                        - Zeugnisdruck<br>
+                        - Anzeige und Übernahme der vorherigen Arbeits- und Sozialverhaltensnoten<br>
+                        - Beschreibung der zu bewertenden Aspekte<br>
+                        - Kursstufe<br>
+                        - Undo/Redo-Funktion<br>
+                        - Rechtschreibungsprüfung für freie Bemerkungen<br>
+                        - Hinzufügen einer zweiten Textbaustein-Bemerkung<br>
+                        - Rechtsklickmenü auf den Spaltenköpfen für Notendarstellung, Standardwerte und Sortierung<br>
+                        - Import aus TeacherTool oder einer Excel-Tabelle<br>
+                        - Verwaltung der Fächer im Programm<br>
+                        - Verwaltung der Zeugnisphasen im Programm, inklusive datenbasierter Fächerzuordnung
+                    </p>
+                </section>
+            </section>
+
+        </main>
+
+    </div>
+
+</body>
+</html>
