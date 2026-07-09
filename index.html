@@ -162,7 +162,14 @@
                 <section id="speichern">
                     <h3>Speichern</h3>
                     <p>
-                        Die eingetragenen Noten und Bemerkungen werden erst dann an die Datenbank übertragen, wenn die Schaltfläche <i>Speichern</i> (Tastenkombination <i>Strg + S</i>) gedrückt wird. Dies ist nur möglich, wenn mindestens ein Eintrag geändert wurde und die Notenliste keine falschen Eingaben enthält. Eine Sicherheitsabfrage verhindert bei ungespeicherten Änderungen sowohl den Wechsel in eine andere Notenliste als auch das Beenden des Programms. Der Rechner sollte aber nicht bei geöffneter, ungespeicherter Notenliste verlassen werden.
+                        Die eingetragenen Noten und Bemerkungen werden erst dann an die Datenbank übertragen, wenn die Schaltfläche <i>Speichern</i> (Tastenkombination <i>Strg + S</i>) gedrückt wird. Dies ist nur möglich, wenn mindestens ein Eintrag geändert wurde und die Notenliste keine falschen Eingaben enthält. Eine Sicherheitsabfrage verhindert bei ungespeicherten Änderungen sowohl den Wechsel in eine andere Notenliste als auch das Beenden des Programms. Der Rechner sollte aber nicht bei geöffneter, ungespeicherter Notenliste verlassen werden. Eine grüne Animation zeigt an, dass die Änderungen erfolgreich gespeichert wurden.
+                    </p>
+                </section>
+
+                <section id="fehlende_eintraege">
+                    <h3>Fehlende Einträge</h3>
+                    <p>
+                        Wird eine unvollständige Notenliste gespeichert, erscheint beim Speichern ein entsprechender Hinweis in der Statusleiste rechts unten und eine zusätzliche gelbe Animation, die darauf hinweist. Dies betrifft sowohl vollständig fehlende Spalten (weil z.B. die Zusammenarbeit noch nicht bewertet wurde) als auch einzelne fehlende Einträge innerhalb einer Spalte (weil z.B. eine einzelne Schülerin keine Note erhalten hat) als auch. In letzterem Fall werden die fehldenden Einträge auch gelb markiert, solange es nicht zu viele sind. Die Markierungen und die Statusmeldung erscheinen auch beim erneuten Laden der Notenliste.
                     </p>
                 </section>
 
@@ -481,10 +488,10 @@
                     </p>
                 </section>
 
-                <section id="gruene_animation">
-                    <h3>Grüne Animation</h3>
+                <section id="gruengelbe_animation">
+                    <h3>Grüne/Gelbe Animation</h3>
                     <p>
-                        Beim Speichern einer Notenliste und beim Abschicken eines Druckauftrags oder einer Rückmeldung erscheint eine kurze grüne Animation, die den erfolgreichen Abschluss signalisiert und auf die entsprechende Meldung in der Statusleiste hinweist. Das Programm kann währenddessen normal weiter bedient werden.
+                        Beim Speichern einer Notenliste und beim Abschicken eines Druckauftrags oder einer Rückmeldung erscheint eine kurze grüne Animation, die den erfolgreichen Abschluss signalisiert und auf die entsprechende Meldung in der Statusleiste links unten hinweist. Beim Speichern einer unvollständigen Notenliste erscheint zusätzlich eine gelbe Animation, die auf die entsprechende Meldung in der Statusleiste rechts unten hinweist. Das Programm kann während der Animation normal weiter bedient werden.
                     </p>
                 </section>
 
