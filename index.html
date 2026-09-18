@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+﻿3<!DOCTYPE html>
 <html lang="de">
 <head>
     <meta charset="utf-8">
@@ -183,7 +183,7 @@
                 <section id="verwerfen">
                     <h3>Änderungen verwerfen</h3>
                     <p>
-                        Solange die eingetragenen Noten noch nicht an die Datenbank übertragen wurden, können die vorhandenen Änderungen über die Schaltfläche <i>Änderungen verwerfen</i> rückgängig gemacht werden. Die angezeigte Notenliste wird dann erneut aus der Datenbank geladen. Zuvor erfolgt eine Sicherheitsabfrage. 
+                        Solange die eingetragenen Noten noch nicht an die Datenbank übertragen wurden, können die vorhandenen Änderungen über die Schaltfläche <i>Änderungen verwerfen</i> rückgängig gemacht werden. Die angezeigte Notenliste wird dann erneut aus der Datenbank geladen. Zuvor erfolgt eine Sicherheitsabfrage.
                     </p>
                 </section>
 
@@ -388,7 +388,7 @@
                 <section id="versetzungsbemerkung">
                     <h3>Versetzungsbemerkung</h3>
                     <p>
-                        In Abhängigkeit vom Notenbild wird automatisch berechnet, ob eine Versetzung in die nächste Klasse stattfindet oder nicht. Wenn alle Noten eingetragen sind, erscheint der entsprechende Vorschlag in der Spalte <i>Bemerkung Versetzung</i> in grauer Schrift. Per <i>Linksklick</i> oder Drücken der <i>Leertaste</i> kann der Vorschlag zunächst übernommen werden. Eine Wiederholung von <i>Linksklick/Leertaste</i> wechselt zu den anderen Bemerkungen, die entsprechend dem Notenbild ebenfalls möglich sind. Beispielsweise kann vom Vorschlag "versetzt" nur gewechselt werden zu "wiederholt freiwillig", nicht aber zu "muss das Gymnasium verlassen". Derartige Abweichungen sind nur unter Beteiligung der Schulleitung möglich. Falls sich der Vorschlag aufgrund von Änderungen im Notenbild nach der Festlegung ändert, wird die Festlegung aufgehoben und muss ausgehend vom neuen Vorschlag erneut bestätigt werden. Fehlen Zeugnisnoten, wird unterschieden: ist die Entscheidung dennoch eindeutig, erscheint der Vorschlag weiterhin in normaler grauer Schrift. Er kann dann aber erst bestätigt werden, wenn alle Noten eingetragen sind. Ist das vorhandene Notenbild hingegen nicht eindeutig, wird der Vorschlag so berechnet, als gäbe es die fehlende Note nicht, und er erscheint kursiv gedruckt, als Prognose statt als fundierter Vorschlag. Auch in diesem Fall kann die Angabe noch nicht bestätigt werden. In jedem Fall ist die Bestätigung erst möglich, wenn Verhalten und Mitarbeit sowie Lob und Preis eingetragen sind.
+                        In Abhängigkeit vom Notenbild wird automatisch berechnet, ob eine Versetzung in die nächste Klasse stattfindet oder nicht. Wenn alle Noten eingetragen sind, erscheint der entsprechende Vorschlag in der Spalte <i>Bemerkung Versetzung</i> in grauer Schrift. Per <i>Linksklick</i> oder Drücken der <i>Leertaste</i> kann der Vorschlag zunächst übernommen werden. Eine Wiederholung von <i>Linksklick/Leertaste</i> wechselt zu den anderen Bemerkungen, die entsprechend dem Notenbild ebenfalls möglich sind. Beispielsweise kann vom Vorschlag "versetzt" nur gewechselt werden zu "wiederholt freiwillig", nicht aber zu "muss das Gymnasium verlassen". Derartige Abweichungen sind nur unter Beteiligung der Schulleitung möglich. Falls sich der Vorschlag aufgrund von Änderungen im Notenbild nach der Festlegung ändert, wird die Festlegung aufgehoben und muss ausgehend vom neuen Vorschlag erneut bestätigt werden. Fehlen Zeugnisnoten, wird unterschieden: ist die Entscheidung dennoch eindeutig, erscheint der Vorschlag weiterhin in normaler grauer Schrift. Er kann dann aber erst bestätigt werden, wenn alle Noten eingetragen sind. Ist das vorhandene Notenbild hingegen nicht eindeutig, wird der Vorschlag so berechnet, als gäbe es die fehlende Note nicht, und er erscheint kursiv gedruckt, als Prognose statt als fundierter Vorschlag. Auch in diesem Fall kann die Angabe noch nicht bestätigt werden. In jedem Fall ist die Bestätigung erst möglich, wenn Verhalten und Mitarbeit sowie Lob und Preis eingetragen sind. Das Zeugnis kann nur gedruckt werden, wenn die Versetzungsbemerkung festgelegt wurde.
                     </p>
                 </section>
 
@@ -475,7 +475,14 @@
                 <section id="zeugnis_drucken">
                     <h3>Zeugnisse drucken</h3>
                     <p>
-                        Von der Notenübersicht der Klassenlehrkraft aus können die Zeugnisse gedruckt werden. Der Zeugnisdruck ist grundsätzlich vollständig implementiert, es können aber noch Anpassungen am Layout folgen.
+                        Von jeder Notenliste aus können die Zeugnisse der entsprechenden Schülerinnen und Schüler (gegebenenfalls klassenübergreifend) gedruckt werden, vorausgesetzt die Versetzungsbemerkung wurde festgelegt.
+                    </p>
+                </section>
+
+                <section id="druck_sus_auswählen">
+                    <h3>Mehrfachauswahl für den Druck</h3>
+                    <p>
+                        Beim Druck der Zeugnisse und Trimesterinformationen sind zunächst aller verfügbaren Schülerinnen und Schüler der Notenliste vorausgewählt. Im Panel links kann unter <i>Schüler/in</i> stattdessen eine einzelne Person ausgewählt werden. Die Schaltfläche mit der Beschriftung <i>...</i> erlaubt es, eine beliebige Teilmenge der Schülerinnen und Schüler auszuwählen. Die Bedienung funktioniert analog zur Verwaltung der AG-Mitglieder und ist im entsprechenden Abschnitt der Hilfe beschrieben. Die Schaltfläche <i>Druckvorschau</i> schließt die SuS-Auswahl.
                     </p>
                 </section>
 
