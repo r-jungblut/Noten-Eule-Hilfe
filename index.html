@@ -118,7 +118,7 @@
             </section>
 
             <section id="eingabe">
-                <h2>Eingabe der Noten</h2>
+                <h2>Eingabe der Noten und Bemerkungen</h2>
 
                 <p>
                     Sobald eine Notenliste ausgewählt wurde, können Noten, Bemerkungen und (je nach ausgewählter Beurteilungsart) Kreuze für das Arbeits- und Sozialverhalten eingegeben werden.
@@ -138,13 +138,6 @@
                     </p>
                 </section>
 
-                <section id="falsche_eingaben">
-                    <h3>Falsche Eingaben</h3>
-                    <p>
-                        Wird ein Wert eingetragen, der für die jeweilige Notenart nicht zulässig ist (z. B. 6− als Trimesternote oder +++ als Verhaltensnote), wird die entsprechende Zelle rot markiert. Die Notenliste kann erst gespeichert werden, wenn alle falschen Eingaben entweder korrigiert oder gelöscht wurden.
-                    </p>
-                </section>
-
                 <section id="kopieren_einfügen_loeschen">
                     <h3>Kopieren, Einfügen und Löschen</h3>
                     <p>
@@ -152,31 +145,24 @@
                     </p>
                 </section>
 
-                <section id="darstellung">
-                    <h3>Notendarstellung</h3>
+                <section id="undo">
+                    <h3>Rückgängig/Undo</h3>
                     <p>
-                        Jede Note kann in zwei verschiedenen Notendarstellungen eingegeben und angezeigt werden. Trimesternoten werden beispielsweise als 2+ oder als 1,75 akzeptiert. Die Kreuze für das Arbeits- und Sozialverhalten werden im Gegensatz zu früher nicht mehr durch Ankreuzen der entsprechenden Spalte eingegeben, sondern als ++, +, - oder --, bzw. als 1, 2, 3 oder 4. Die Notendarstellung kann durch <i>Alt + Linksklick</i> auf den Kopf der entsprechenden Tabellenspalte gewechselt werden.
+                        Jede vorgenommene Eingabe (Noten und Bemerkungen) kann durch die Tastenkombination <i>Strg + Z</i> rückgängig gemacht werden (sog. "Undo"). Dabei springt die Markierung der aktiven Zellen zur betroffenen Stelle. Verfügbar sind die letzten 100 Änderungen, aber immer nur bis die Notenliste geschlossen bzw. gewechselt wurde. Auch bereits gespeicherte Änderungen können in der angezeigten Notenliste rückgängig gemacht werden, in der Datenbank bleiben sie aber erhalten, bis die so geänderte Notenliste erneut gespeichert wird. Falls mehrere Änderungen betroffen sind (z.B. beim Befüllen aller leeren Zellen mit Standardwerten), zeigt eine kurze Animation alle betroffenen Zellen an.
                     </p>
                 </section>
 
-                <section id="standardwerte">
-                    <h3>Standardwerte (alles +) auffüllen</h3>
+                <section id="redo">
+                    <h3>Wiederholen/Redo</h3>
                     <p>
-                        Beim Arbeits- und Sozialverhalten wird durch <i>Shift + Linksklick</i> auf den Kopf einer Tabellenspalte jede leere Zelle dieser Spalte mit der Note + gefüllt. Alternativ kann bei der Eingabe in eine Zelle <i>Shift + Pluszeichen</i> gedrückt werden. Entsprechend ist es empfehlenswert, zuerst die abweichenden Noten einzutragen und dann die freien Felder automatisch auffüllen zu lassen.
-                    </p>
-                </section>
-
-                <section id="verhalten_und_mitarbeit">
-                    <h3>Verhalten und Mitarbeit</h3>
-                    <p>
-                        Die von den Fachlehrkräften eingetragenen Noten für Verhalten und Mitarbeit erscheinen nicht direkt im Zeugnis, sondern dienen der Klassenlehrkraft als Meinungsbild. Falls die Klassenlehrkraft bereits Noten für Verhalten und Mitarbeit eingetragen hat, werden diese den Fachlehrkräften als hellgrauer Vorschlag angezeigt. Trägt auch die Fachlehrkraft eine Note ein, erscheint sie in grüner Schrift, falls sie besser ist als der Vorschlag, oder in roter Schrift, falls sie schlechter ist. Ein ToolTip zeigt zusätzlich den KL-Vorschlag an. Durch <i>Strg + Linksklick</i> auf den Kopf der Tabellenspalte wird jede leere Zelle dieser Spalte mit dem KL-Vorschlag gefüllt, durch <i>Shift + Linksklick</i> mit der Note 2. Durch <i>Alt + Linksklick</i> lässt sich die Färbung deaktivieren.
+                        Mit Undo rückgängig gemachte Änderungen können mit der Tastenkombination <i>Strg + Y</i> oder <i>Strg + Shift + Z</i> wiederhergestellt werden (sog. "Redo"). Nicht möglich ist es hingegen, eine gerade vorgenommene Änderung auf einer anderen Zelle zu wiederholen, beispielsweise um dieselbe Bemerkung in mehreren Zellen einzutragen. Hierfür steht die Funktion Kopieren/Einfügen zur Verfügung.
                     </p>
                 </section>
 
                 <section id="speichern">
                     <h3>Speichern</h3>
                     <p>
-                        Die eingetragenen Noten und Bemerkungen werden erst dann an die Datenbank übertragen, wenn die Schaltfläche <i>Speichern</i> (Tastenkombination <i>Strg + S</i>) gedrückt wird. Dies ist nur möglich, wenn mindestens ein Eintrag geändert wurde und die Notenliste keine falschen Eingaben enthält. Eine Sicherheitsabfrage verhindert bei ungespeicherten Änderungen sowohl den Wechsel in eine andere Notenliste als auch das Beenden des Programms. Der Rechner sollte aber nicht bei geöffneter, ungespeicherter Notenliste verlassen werden. Eine grüne Animation zeigt an, dass die Änderungen erfolgreich gespeichert wurden.
+                        Die eingetragenen Noten und Bemerkungen werden erst dann an die Datenbank übertragen, wenn die Schaltfläche <i>Speichern</i> (Tastenkombination <i>Strg + S</i>) gedrückt wird. Dies ist nur möglich, wenn mindestens ein Eintrag geändert wurde und die Notenliste keine ungültigen Eingaben enthält. Eine Sicherheitsabfrage verhindert bei ungespeicherten Änderungen sowohl den Wechsel in eine andere Notenliste als auch das Beenden des Programms. Der Rechner sollte aber nicht bei geöffneter, ungespeicherter Notenliste verlassen werden. Eine grüne Animation zeigt an, dass die Änderungen erfolgreich gespeichert wurden.
                     </p>
                 </section>
 
@@ -197,7 +183,7 @@
                 <section id="schliessen_und_beenden">
                     <h3>Liste schließen und Beenden</h3>
                     <p>
-                        Die Schaltfläche <i>Liste schließen</i> führt zurück zum Startbildschirm, so dass keine Liste mehr geöffnet ist. Im Gegensatz zum alten Programm muss dies aber nicht zwangsweise nach jeder Noteneingabe durchgeführt werden. Die Funktion dient lediglich dazu, das Programm in einem "sauberen" Zustand zu hinterlassen, wenn es nicht beendet werden soll. Ein direktes Beenden des Programms von der Notenliste aus ist aber auch problemlos möglich. In beiden Fällen erfolgt eine Sicherheitsabfrage, falls ungespeicherte Änderungen vorliegen.
+                        Die Schaltfläche <i>Liste schließen</i> (oder die Tastenkombination <i>Strg + W</i>) führt zurück zum Startbildschirm, so dass keine Liste mehr geöffnet ist. Im Gegensatz zum alten Programm muss dies aber nicht zwangsweise nach jeder Noteneingabe durchgeführt werden. Die Funktion dient lediglich dazu, das Programm in einem "sauberen" Zustand zu hinterlassen, wenn es nicht beendet werden soll. Ein direktes Beenden des Programms von der Notenliste aus ist aber auch problemlos möglich. In beiden Fällen erfolgt eine Sicherheitsabfrage, falls ungespeicherte Änderungen vorliegen.
                     </p>
                 </section>
 
@@ -205,13 +191,6 @@
                     <h3>Sortierung und Nummerierung</h3>
                     <p>
                         Die Notenliste ist standardgemäß alphabetisch nach dem Nachnamen, dann nach dem Rufnamen der Schülerinnen und Schüler sortiert. Daraus ergibt sich auch die Nummerierung der Zeilen. Durch <i>Linksklick</i> auf den Spaltenkopf der Nummerierungs- und Namensspalten kann die Sortierung geändert bzw. zwischen aufsteigend und absteigend geändert werden. Eine Sortierung nach den Noten ist nicht möglich.
-                    </p>
-                </section>
-
-                <section id="aspekte">
-                    <h3>Zu bewertende Aspekte</h3>
-                    <p>
-                        In Abhängigkeit von der ausgewählten Beurteilungsart (Trimesterinformation oder Zeugnis) wird automatisch die Notenart (Viertelnoten oder ganze Noten) festgelegt, und ob Verhalten und Mitarbeit in Form einer Note oder in Form der Kreuze zum Arbeits- und Sozialverhalten bewertet werden. Ebenso werden die zu bewertenden Aspekte in Abhängigkeit von Fach und Klassenstufe bestimmt, beispielsweise in Bruchsal bei der Sprachkompetenz bis Klasse 7. Die völlständige Bezeichnung der Aspekte wird als ToolTip der entsprechenden Spaltenköpfe angezeigt. Eine nähere Beschreibung der Aspekte wird noch nachgereicht.
                     </p>
                 </section>
 
@@ -223,8 +202,50 @@
                 </section>
             </section>
 
+            <section id="noten">
+                <h2>Noten</h2>
+                <p>
+                    Die Fachnoten, die Noten zu Verhalten und Mitarbeit und die Kreuze zum Arbeits- und Sozialverhalten können auf verschiedene Arten eingetragen werden.
+                </p>
+
+                <section id="darstellung">
+                    <h3>Notendarstellung</h3>
+                    <p>
+                        Jede Note kann in zwei verschiedenen Notendarstellungen eingegeben und angezeigt werden. Trimesternoten werden beispielsweise als 2+ oder als 1,75 akzeptiert. Die Kreuze für das Arbeits- und Sozialverhalten werden im Gegensatz zu früher nicht mehr durch Ankreuzen der entsprechenden Spalte eingegeben, sondern als ++, +, - oder --, bzw. als 1, 2, 3 oder 4. Die Notendarstellung kann durch <i>Alt + Linksklick</i> auf den Kopf der entsprechenden Tabellenspalte gewechselt werden.
+                    </p>
+                </section>
+
+                <section id="standardwerte">
+                    <h3>Standardwerte (alles +) auffüllen</h3>
+                    <p>
+                        Beim Arbeits- und Sozialverhalten wird durch <i>Shift + Linksklick</i> auf den Kopf einer Tabellenspalte jede leere Zelle dieser Spalte mit der Note + gefüllt. Alternativ kann bei der Eingabe in eine Zelle <i>Shift + Pluszeichen</i> gedrückt werden. Entsprechend ist es empfehlenswert, zuerst die abweichenden Noten einzutragen und dann die freien Felder automatisch auffüllen zu lassen. Eine kurze Animation zeigt alle betroffenen Zellen an.
+                    </p>
+                </section>
+
+                <section id="ungueltige_noten">
+                    <h3>Ungültige Noten</h3>
+                    <p>
+                        Wird ein Wert eingetragen, der für die jeweilige Notenart nicht zulässig ist (z. B. 6− als Trimesternote oder +++ als Verhaltensnote), wird die entsprechende Zelle dunkelrosa markiert. Die Notenliste kann erst gespeichert werden, wenn alle ungültigen Eingaben entweder korrigiert oder gelöscht wurden.
+                    </p>
+                </section>
+
+                <section id="verhalten_und_mitarbeit">
+                    <h3>Verhalten und Mitarbeit</h3>
+                    <p>
+                        Die von den Fachlehrkräften eingetragenen Noten für Verhalten und Mitarbeit erscheinen nicht direkt im Zeugnis, sondern dienen der Klassenlehrkraft als Meinungsbild. Falls die Klassenlehrkraft bereits Noten für Verhalten und Mitarbeit eingetragen hat, werden diese den Fachlehrkräften als hellgrauer Vorschlag angezeigt. Trägt auch die Fachlehrkraft eine Note ein, erscheint sie in grüner Schrift, falls sie besser ist als der Vorschlag, oder in roter Schrift, falls sie schlechter ist. Ein ToolTip zeigt zusätzlich den KL-Vorschlag an. Durch <i>Strg + Linksklick</i> auf den Kopf der Tabellenspalte wird jede leere Zelle dieser Spalte mit dem KL-Vorschlag gefüllt, durch <i>Shift + Linksklick</i> mit der Note 2. Durch <i>Alt + Linksklick</i> lässt sich die Färbung deaktivieren.
+                    </p>
+                </section>
+
+                <section id="aspekte">
+                    <h3>Zu bewertende Aspekte</h3>
+                    <p>
+                        In Abhängigkeit von der ausgewählten Beurteilungsart (Trimesterinformation oder Zeugnis) wird automatisch die Notenart (Viertelnoten oder ganze Noten) festgelegt, und ob Verhalten und Mitarbeit in Form einer Note oder in Form der Kreuze zum Arbeits- und Sozialverhalten bewertet werden. Ebenso werden die zu bewertenden Aspekte in Abhängigkeit von Fach und Klassenstufe bestimmt, beispielsweise in Bruchsal bei der Sprachkompetenz bis Klasse 7. Die völlständige Bezeichnung der Aspekte wird als ToolTip der entsprechenden Spaltenköpfe angezeigt. Eine nähere Beschreibung der Aspekte wird noch nachgereicht.
+                    </p>
+                </section>
+            </section>
+
             <section id="bemerkungen">
-                <h2>Eingabe der Bemerkungen</h2>
+                <h2>Bemerkungen</h2>
                 <p>
                     Bemerkungen können direkt in der Notenliste frei eingegeben oder mithilfe des Textbaustein-Editors aus vordefinierten Bausteinen zusammengestellt werden.
                 </p>
@@ -233,6 +254,20 @@
                     <h3>Bemerkungen kopieren</h3>
                     <p>
                         Vorhandene Bemerkungen können mit der Tastenkombination <i>Strg + C</i> kopiert oder mit <i>Strg + X</i> ausgeschnitten werden, und mit <i>Strg + V</i> in einem anderen Bemerkungsfeld wieder eingefügt werden. Enthält die Bemerkung den Namen des Schülers oder der Schülerin, wird dieser automatisch korrekt ersetzt. Andere Anpassungen wie geschlechterspezifische Formulierungen müssen manuell vorgenommen werden.
+                    </p>
+                </section>
+
+                <section id="eingabe_name">
+                    <h3>Eingabe des Namens</h3>
+                    <p>
+                        Mit der Tastenkombination <i>Strg + Leertaste</i> kann der Name des Schülers oder der Schülerin automatisch eingefügt werden. Ebenso wird bei Verwendung des Textbaustein-Editors automatisch eingefügt. Falsch geschriebene Namen werden als ungültig markiert. Sie können mit <i>Strg + Linksklick</i> auf die betroffene Zelle korrigiert werden.
+                    </p>
+                </section>
+
+                <section id="ungueltige_bemerkungen">
+                    <h3>Ungültige Bemerkungen</h3>
+                    <p>
+                        Wird eine ungültige Bemerkung eingetragen, wird die entsprechende Zelle dunkelrosa markiert, mit einem Tooltip, der den Grund angibt. Markiert werden Bemerkungen, die zu kurz sind oder in denen der Name des Schülers oder der Schülerin falsch geschrieben wurde. Dabei werden Abweichungen von einem Buchstaben erkannt, vorausgesetzt der Name enthält mindestens fünf Buchstaben. Ein falscher Name kann durch <i>Strg + Linksklick</i> auf die betroffene Zelle automatisch korrigiert werden. Die Notenliste kann erst gespeichert werden, wenn alle ungültigen Eingaben entweder korrigiert oder gelöscht wurden.
                     </p>
                 </section>
 
@@ -275,7 +310,7 @@
                 <section id="ag_filter">
                     <h3>Filter für AGs</h3>
                     <p>
-                        Über den Listen für die Verwaltung der AGs gibt es jeweils ein Textfeld, mit dem die entsprechende Liste gefiltert werden kann. Durch Eingabe eines Suchbegriffs werden nur die Listeninhalte angezeigt, die den Suchbegriff enthalten, beispielsweise alle AGs mit "Chor" oder alle Schülerinnen und Schüler mit "ristin". Mit der Schaltfläche ✕ kann der Filter zurückgesetzt werden, so dass wieder die vollständige Liste angezeigt wird. Die grauen Zahlen rechts unten geben die Anzahl ausgewählter bzw. angezeigter Einträge an.
+                        Über den Listen für die Verwaltung der AGs gibt es jeweils ein Textfeld, mit dem die entsprechende Liste gefiltert werden kann. Durch Eingabe eines Suchbegriffs werden nur die Listeninhalte angezeigt, die den Suchbegriff enthalten, beispielsweise alle AGs mit "Chor" oder alle Schülerinnen und Schüler mit "lla". Mit der Schaltfläche ✕ kann der Filter zurückgesetzt werden, so dass wieder die vollständige Liste angezeigt wird. Die grauen Zahlen rechts unten geben die Anzahl ausgewählter bzw. angezeigter Einträge an.
                     </p>
                 </section>
 
@@ -294,7 +329,7 @@
                 </section>
 
                 <section id="ag_speichern">
-                    <h3>AG-Änderungen speichern und verwerfen</h3>
+                    <h3>AG-Änderungen speichern/verwerfen</h3>
                     <p>
                         Sämtliche Änderungen an den AGs und/oder ihren Mitgliedern müssen explizit mit der Schaltfläche <i>Speichern</i> (Tastenkombination <i>Strg + S</i>) gespeichert werden. Es ist auch möglich, die Änderungen zu verwerfen und zum zuletzt gespeicherten Stand zurückzukehren mit der Schaltfläche <i>Änderungen verwerfen</i>. Falls die AG-Verwaltung ohne Speichern der Änderungen verlassen wird, erscheint eine entsprechende Sicherheitsabfrage - alles genau wie bei den Notenlisten.
                     </p>
@@ -381,7 +416,7 @@
                 <section id="verhalten_mitarbeit_kl">
                     <h3>Verhalten und Mitarbeit</h3>
                     <p>
-                        Nur die von der Klassenlehrkraft eingetragenen Noten für Verhalten und Mitarbeit werden im Zeugnis gedruckt. Die von den Fachlehrkräften eingetragenen Noten können als Meinungsbild angezeigt werden. Falls die Klassenlehrkraft bereits eigene Noten eingetragen hat, erscheinen die Noten der Fachlehrkräfte (und deren Durchschnitte) in grüner Schrift, falls sie besser sind als die KL-Note, oder in roter Schrift, falls sie schlechter sind. Falls die Klassenlehrkraft keine eigenen Noten eingetragen hat, wird stattdessen der Durchschnitt der maßgebenden Fächern als hellgrauer Vorschlag angezeigt, vorausgesetzt mindestens drei Fachlehrkräfte haben Noten eingetragen. Durch <i>Strg + Linksklick</i> auf den Kopf der Tabellenspalte wird jede leere Zelle dieser Spalte mit dem Vorschlag gefüllt, durch <i>Shift + Linksklick</i> mit der Note 2. Durch <i>Alt + Linksklick</i> lässt sich die Färbung deaktivieren.
+                        Nur die von der Klassenlehrkraft eingetragenen Noten für Verhalten und Mitarbeit werden im Zeugnis gedruckt. Die von den Fachlehrkräften eingetragenen Noten können als Meinungsbild angezeigt werden. Falls die Klassenlehrkraft bereits eigene Noten eingetragen hat, erscheinen die Noten der Fachlehrkräfte (und deren Durchschnitte) in grüner Schrift, falls sie besser sind als die KL-Note, oder in roter Schrift, falls sie schlechter sind. Falls die Klassenlehrkraft keine eigenen Noten eingetragen hat, wird stattdessen der Durchschnitt der maßgebenden Fächern als hellgrauer Vorschlag angezeigt, vorausgesetzt mindestens drei Fachlehrkräfte haben Noten eingetragen. Durch <i>Strg + Linksklick</i> auf den Kopf der Tabellenspalte wird jede leere Zelle dieser Spalte mit dem Vorschlag gefüllt, durch <i>Shift + Linksklick</i> mit der Note 2. Eine kurze Animation zeigt alle betroffenen Zellen an. Durch <i>Alt + Linksklick</i> lässt sich die Färbung deaktivieren.
                     </p>
                 </section>
 
@@ -496,7 +531,7 @@
                 <section id="druck_klassen">
                     <h3>Druck mehrerer Klassen</h3>
                     <p>
-                        Wenn keine Notenliste geöffnet ist, kann für mehrere Klassen gleichzeitig die Trimesterinformationen bzw. Zeugnisse gedruckt werden. In diesem Fall zeigt das Druckfenster links eine Liste aller Klassen des Standorts an. Durch An- und Abwahl können einzelne Klassen ausgewählt oder ausgeschlossen werden. Die Schaltfläche mit der Beschriftung <i>...</i> erlaubt weiterhin die Auswahl spezifischer Schülerinnen und Schüler. Beim Druck der Zeugnisse sind weiterhin nur jene Schülerinnen und Schüler verfügbar, deren Versetzungsbemerkung festgelegt wurde.
+                        Wenn keine Notenliste geöffnet ist, kann für mehrere Klassen gleichzeitig die Trimesterinformationen bzw. Zeugnisse gedruckt werden. In diesem Fall zeigt das Druckfenster links eine Liste aller Klassen des Standorts an. Durch An- und Abwahl können einzelne Klassen ausgewählt oder ausgeschlossen werden, oder über "(Alle Klassen)" sämtliche Klassen auf einmal. Die Schaltfläche mit der Beschriftung <i>...</i> erlaubt weiterhin die Auswahl spezifischer Schülerinnen und Schüler. Beim Druck der Zeugnisse sind nur jene Schülerinnen und Schüler verfügbar, deren Versetzungsbemerkung festgelegt wurde. Werden mehrere Klassen gleichzeitig gedruckt, können beschriftete Trennblätter zur einfachereren Sortierung eingefügt werden.
                     </p>
                 </section>
 
@@ -630,24 +665,48 @@
                                     <td>Zelleninhalt kopieren</td>
                                 </tr>
                                 <tr>
+                                    <td style="padding-right: 40px;">Strg + X</td>
+                                    <td>Zelleninhalt ausschneiden</td>
+                                </tr>
+                                <tr>
                                     <td style="padding-right: 40px;">Strg + V</td>
                                     <td>Zelleninhalt einfügen</td>
                                 </tr>
                                 <tr>
-                                    <td style="padding-right: 40px;">Shift + Linksklick auf Spaltenkopf</td>
-                                    <td>Alle leeren Zellen der Spalte auf „+" setzen</td>
+                                    <td style="padding-right: 40px;">Strg + Z</td>
+                                    <td>Eingabe rückgängig machen</td>
+                                </tr>
+                                <tr>
+                                    <td style="padding-right: 40px;">Strg + Y / Strg + Shift + Z</td>
+                                    <td>Rückgängig gemachte Eingabe wiederherstellen</td>
+                                </tr>
+                                <tr>
+                                    <td style="padding-right: 40px;">Entf/Rückstelltaste</td>
+                                    <td>Gesamte Zelle löschen</td>
+                                </tr>
+                                <tr>
+                                    <td style="padding-right: 40px;">Strg + Leertaste</td>
+                                    <td>Rufname in die Bemerkung einfügen</td>
+                                </tr>
+                                <tr>
+                                    <td style="padding-right: 40px;">Strg + Linksklick auf ungültige Bemerkung</td>
+                                    <td>Falsch geschriebenen Rufnamen korrigieren</td>
                                 </tr>
                                 <tr>
                                     <td style="padding-right: 40px;">Shift + Pluszeichen</td>
-                                    <td>Alle leeren Zellen der aktuellen Spalte auf „+" setzen</td>
+                                    <td>Alle leeren Zellen der aktuellen Spalte auf „+"/„2" setzen</td>
+                                </tr>
+                                <tr>
+                                    <td style="padding-right: 40px;">Shift + Linksklick auf Spaltenkopf</td>
+                                    <td>Alle leeren Zellen der angeklickten Spalte auf „+"/„2" setzen</td>
                                 </tr>
                                 <tr>
                                     <td style="padding-right: 40px;">Strg + Linksklick auf Spaltenkopf</td>
-                                    <td>Alle leeren Zelle der Spalte auf den vorgeschlagenen Wert setzen</td>
+                                    <td>Alle leeren Zelle der angeklickten Spalte auf den vorgeschlagenen Wert setzen</td>
                                 </tr>
                                 <tr>
                                     <td style="padding-right: 40px;">Alt + Linksklick auf Spaltenkopf</td>
-                                    <td>Notendarstellung der Spalte wechseln (Notenwert / Notenbezeichnung)</td>
+                                    <td>Notendarstellung der angeklickten Spalte wechseln (Notenwert / Notenbezeichnung)</td>
                                 </tr>
                                 <tr>
                                     <td style="padding-right: 40px;">Escape</td>
@@ -736,11 +795,9 @@
                     <h3>Geplante Funktionen</h3>
                     <p>
                         In dieser Version noch nicht vorhanden aber für die Zukunft geplant sind die folgenden Funktionen:<br>
-                        - Zeugnisdruck<br>
                         - Anzeige und Übernahme der vorherigen Arbeits- und Sozialverhaltensnoten<br>
                         - Beschreibung der zu bewertenden Aspekte<br>
                         - Kursstufe<br>
-                        - Undo/Redo-Funktion<br>
                         - Rechtschreibungsprüfung für freie Bemerkungen<br>
                         - Hinzufügen einer zweiten Textbaustein-Bemerkung<br>
                         - Rechtsklickmenü auf den Spaltenköpfen für Notendarstellung, Standardwerte und Sortierung<br>
